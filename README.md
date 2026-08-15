@@ -1,48 +1,67 @@
-# Prism
+# Prism — Android Widget Platform
 
-A premium Android home-screen customisation app. One purchase, everything unlocked, forever.
+> An Android home-screen widget application focused on customizable, modern widget experiences.
 
-**Start here:** [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) explains the one idea the whole
-codebase follows from. [`docs/ROADMAP.md`](docs/ROADMAP.md) is honest about what is built and what
-is not.
+**Status:** 🚧 Active Development
 
-## The short version
+Prism is a Kotlin-based Android project for creating, previewing, and managing customizable home-screen widgets. The project uses a shared rendering pipeline so widget previews and rendered widgets stay consistent.
 
-A widget is data, not a layout. A `WidgetSpec` (family + variant + the user's own edits) resolves
-into a `WidgetStyle`, which a Canvas engine rasterises into a bitmap. That bitmap goes into a
-one-`ImageView` `RemoteViews` on the home screen — and into the catalog tile and the live editor
-preview. Same code path, so a preview can never lie.
+---
 
-32 families × ~13 variants ≈ 416 widgets, built from ~19 content renderers and 11 layouts.
+## ✨ Project Highlights
 
-## Build
+- Android home-screen widget system
+- Customizable widget configurations
+- Widget catalog and live editor
+- Shared rendering pipeline
+- Multiple widget families and variants
+- Canvas-based rendering
+- Bitmap-based widget output
+- Modular Android architecture
+- Automated testing and validation
+- Documentation-driven development
 
-```bash
-./gradlew :app:assembleDebug
-./gradlew test                    # JVM: style resolution, catalog integrity
-./gradlew :core:render:testDebugUnitTest   # Robolectric golden images
-```
+---
 
-Requires JDK 17, Android SDK 35. Bundled variable fonts go in `core/render/src/main/assets/fonts/`;
-see `TypefaceProvider` for the expected filenames.
+## 📱 Widget System
 
-## Adding a design family
+A widget is represented as data rather than a fixed layout.
 
-1. Copy `core/data/.../catalog/MinimalMono.kt`.
-2. Write one `WidgetStyle` and 10–15 `WidgetVariant`s.
-3. Add it to `PrismCatalog.ALL`.
-4. Run the family checklist in `docs/ROADMAP.md`.
+A `WidgetSpec` containing the widget family, variant, and user configuration is resolved into a `WidgetStyle`.
 
-No renderer, UI, or migration changes. That is the entire point of the architecture.
+The rendering pipeline then converts the style into a bitmap that can be displayed through Android's widget system.
 
-## Layout
+The same rendering path is used for previews and widget output, helping keep the editor preview consistent with the actual widget.
 
-```
-core/model     immutable domain types — the whole design language
-core/render    Canvas engine + content renderers + typography
-core/data      Room, DataStore, the authored catalog, licensing
-core/design    the app's own Compose theme (deliberately quiet)
-feature/*      catalog, editor, wallpapers
-widget         AppWidgetProvider, update scheduling, data sources
-branding       original icon and wordmark (SVG)
-```
+### Current project scale
+
+- **32 widget families**
+- **~13 variants per family**
+- **~416 widget configurations**
+- **~19 content renderers**
+- **11 layouts**
+
+---
+
+## 🏗️ Architecture
+
+The project follows a modular structure:
+
+```text
+app/
+├── Main application module
+│
+├── core/
+│   └── Shared application and rendering logic
+│
+├── feature/
+│   └── Feature-specific functionality
+│
+├── widget/
+│   └── Widget system and widget rendering
+│
+├── branding/
+│   └── Application branding resources
+│
+└── docs/
+    └── Architecture and development documentation
