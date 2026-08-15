@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generated from the Chrome Liquid family's WidgetStyle. Do not edit; run tools/generate_native_widgets.py. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <gradient
+        android:type="linear"
+        android:angle="270"
+        android:startColor="#FF8992AC"
+        android:centerColor="#FF6E7A88"
+        android:endColor="#FF39424E" />
+    <corners android:radius="20dp" />
+</shape>

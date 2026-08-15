@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <!--
+      Errors, not warnings, for the four classes of defect that are expensive in a widget app.
+    -->
+    <issue id="RemoteViewLayout" severity="error" />
+    <issue id="UnusedResources" severity="error" />
+    <issue id="ContentDescription" severity="error" />
+    <issue id="MissingPermission" severity="error" />
+
+    <!-- Deprecations we have not migrated yet must not be silently accumulated. -->
+    <issue id="DiscouragedApi" severity="error" />
+
+    <!--
+      Widgets deliberately ignore the user's font-scale setting: a 200% scale on a 2x2 clock
+      produces a widget with no time in it. The app's own UI honours font scaling fully, which is
+      where it actually helps.
+    -->
+    <issue id="SpUsage">
+        <ignore path="core/render/**" />
+    </issue>
+
+    <!-- Wallpaper artwork is delivered in an asset pack, not as resources. -->
+    <issue id="IconMissingDensityFolder" severity="informational" />
+</lint>

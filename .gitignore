@@ -1,0 +1,23 @@
+# Android Studio writes this with your SDK path. Machine-specific — never commit it.
+local.properties
+
+*.iml
+.idea/
+.gradle/
+build/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Generated on first build; the checked-in baseline is lint-baseline.xml.
+lint-results*.html
+lint-results*.xml
+
+# Fonts and wallpaper artwork are licensed assets delivered outside the repo.
+core/render/src/main/assets/fonts/*.ttf
+wallpaper_pack/src/main/assets/wallpapers/*
+
+# Keystores. If one of these ever appears in a diff, stop and rotate it.
+*.jks
+*.keystore
+keystore.properties

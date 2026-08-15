@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!--
+      Permission philosophy: nothing is requested at install time, and nothing is requested until
+      the user places a widget that genuinely needs it. A wallpaper-and-clock user grants nothing.
+    -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    <uses-permission android:name="com.android.vending.BILLING" />
+
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <!-- Weather/finance/crypto only. No network traffic occurs unless one is placed. -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!--
+      Package visibility, Android 11+.
+
+      Without this, resolveActivity() returns null for every activity outside our own package and
+      widget taps silently fall back to the in-app editor. Deliberately narrow: only the intents a
+      widget actually routes to, never QUERY_ALL_PACKAGES.
+    -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.APP_MUSIC" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.APP_CALENDAR" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="https" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:mimeType="image/*" />
+        </intent>
+        <package android:name="com.google.android.deskclock" />
+        <package android:name="com.google.android.calendar" />
+        <package android:name="com.google.android.apps.fitness" />
+    </queries>
+
+    <application
+        android:name=".PrismApp"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Prism">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:configChanges="uiMode|orientation|screenSize|screenLayout|smallestScreenSize|density"
+            android:theme="@style/Theme.Prism.Splash"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Launched by the host when a widget is dropped, and again from "Edit" on a placed widget. -->
+        <!--
+          Exported because the widget host launches it. It reads exactly one extra
+          (EXTRA_APPWIDGET_ID), validates it against AppWidgetManager, and finishes if it is invalid
+          or not owned by us — an exported activity that trusts its extras is the usual way a widget
+          app becomes an attack surface.
+        -->
+        <activity
+            android:name="com.prism.studio.editor.WidgetConfigureActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Prism">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+
+        <!--
+          PrismApp implements Configuration.Provider so WorkManager is created on demand with the
+          HiltWorkerFactory. The androidx.startup auto-initialiser must therefore be removed, or it
+          initialises WorkManager first without our factory and every @HiltWorker fails to construct.
+        -->
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="${applicationId}.androidx-startup"
+            android:exported="false"
+            tools:node="merge">
+            <meta-data
+                android:name="androidx.work.WorkManagerInitializer"
+                android:value="androidx.startup"
+                tools:node="remove" />
+        </provider>
+
+        <receiver
+            android:name="com.prism.studio.widget.PrismWidgetProvider"
+            android:exported="true"
+            android:label="Aura Glass — Wide">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_info_medium" />
+        </receiver>
+
+        <receiver
+            android:name="com.prism.studio.widget.PrismCompactProvider"
+            android:exported="true"
+            android:label="Aura Glass — Small">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_info_compact" />
+        </receiver>
+
+
+        <receiver
+            android:name="com.prism.studio.widget.PrismTallProvider"
+            android:exported="true"
+            android:label="Aura Glass — Tall">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_info_tall" />
+        </receiver>
+
+        <receiver
+            android:name="com.prism.studio.widget.PrismLargeProvider"
+            android:exported="true"
+            android:label="Aura Glass — Large">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_info_large" />
+        </receiver>
+
+        <receiver
+            android:name="com.prism.studio.widget.PrismBannerProvider"
+            android:exported="true"
+            android:label="Aura Glass — Banner">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_info_banner" />
+        </receiver>
+
+        <!--
+          Receives the launcher's confirmation from requestPinAppWidget. Not exported: only the
+          PendingIntent we created can trigger it, so another app cannot fabricate a placement.
+        -->
+        <receiver
+            android:name="com.prism.studio.widget.PinResultReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.prism.studio.WIDGET_PINNED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Enabled only while a minute-cadence widget is placed. See TickReceiver. -->
+        <!--
+          Now Playing. Bound by the system only; the user enables it in Settings > Notification
+          access, and nothing in the app works differently until they do. Declared here rather than
+          requested as a permission because BIND_NOTIFICATION_LISTENER_SERVICE is held by the
+          system, not by us.
+        -->
+        <service
+            android:name="com.prism.studio.widget.MediaSessionListener"
+            android:exported="false"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name="com.prism.studio.widget.BootReceiver"
+            android:enabled="false"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

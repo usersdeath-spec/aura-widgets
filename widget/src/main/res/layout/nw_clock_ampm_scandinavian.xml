@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Scandinavian — Clock AM/PM. Generated; do not edit.
+  Run tools/generate_native_widgets.py to regenerate.
+
+  Real Views, not a rasterised bitmap: text is hinted and subpixel-rendered by the platform, the
+  system draws the preview in the widget picker, and a TextClock ticks itself with no worker, no
+  alarm and no battery cost.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="start|center_vertical"
+    android:background="@drawable/nw_bg_scandinavian"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="bottom">
+
+        <TextClock
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:format12Hour="h:mm"
+            android:format24Hour="HH:mm"
+            android:textColor="#FF2C2E33"
+            android:textSize="40sp"
+            android:includeFontPadding="false"
+            android:fontFamily="@font/grotesk"
+            android:textStyle="normal" />
+
+        <TextClock
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:format12Hour="a"
+            android:format24Hour=""
+            android:textColor="#7A2C2E33"
+            android:textSize="14sp"
+            android:includeFontPadding="false"
+            android:paddingStart="4dp"
+            android:paddingBottom="6dp"
+            android:fontFamily="@font/grotesk" />
+    </LinearLayout>
+</LinearLayout>

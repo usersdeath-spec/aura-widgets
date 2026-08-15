@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Mercury — Clock. Generated; do not edit.
+  Run tools/generate_native_widgets.py to regenerate.
+
+  Real Views, not a rasterised bitmap: text is hinted and subpixel-rendered by the platform, the
+  system draws the preview in the widget picker, and a TextClock ticks itself with no worker, no
+  alarm and no battery cost.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/nw_bg_mercury"
+    android:padding="22dp">
+
+    <TextClock
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:format12Hour="h:mm"
+        android:format24Hour="HH:mm"
+        android:textColor="#FF11161C"
+        android:textSize="46sp"
+        android:includeFontPadding="false"
+        android:fontFamily="@font/grotesk"
+        android:textStyle="bold" />
+</LinearLayout>

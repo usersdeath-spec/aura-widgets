@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Pre-Android-12 equivalent of data_extraction_rules.xml. Kept in sync by hand; both are short. -->
+<full-backup-content>
+    <include domain="database" path="prism.db" />
+    <include domain="sharedpref" path="." />
+    <exclude domain="sharedpref" path="license.preferences_pb" />
+    <exclude domain="file" path="feed_weather.json" />
+    <exclude domain="file" path="feed_finance.json" />
+    <exclude domain="file" path="feed_crypto.json" />
+    <exclude domain="file" path="feed_quote.json" />
+</full-backup-content>

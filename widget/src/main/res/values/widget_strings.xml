@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Owned by :widget because :widget's provider XML references them. Resources flow downward only:
+  :app can see these, this module cannot see :app's.
+-->
+<resources>
+    <!-- Shown in the host's widget picker, which is a cramped sheet. Says what the widget does and
+         what it costs the user, not what the app is. -->
+    <string name="widget_description_medium">Resizable. Updates on the minute. No extra apps needed.</string>
+    <string name="widget_description_compact">Compact designs for tight spaces.</string>
+</resources>

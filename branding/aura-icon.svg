@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Aura Widgets app icon">
+  <!--
+    AURA — store icon, second attempt.
+    ==================================
+    The first version was three flat shapes on white and it looked cheap, correctly. Flat shapes
+    only work when the shapes themselves are the idea (OneUI's four squares, Everything Widgets'
+    heart). Ours had no idea in it — just geometry.
+
+    What the leaders actually do that reads as expensive:
+      * Glass Widgets (#4 top paid) uses a DARK ground with a real gradient and overlapping
+        translucency. It has depth. It is the only one of the four that looks like a product rather
+        than a sticker.
+      * Material You uses organic form and colour transition, not hard-edged rectangles.
+
+    So: dark ground, and the mark is literally an aura — a luminous corona bleeding out from behind
+    a dark widget tile. The glow is the subject, not decoration, which is the only honest way to
+    draw a thing called Aura. It also cannot be drawn flat, which is exactly why it does not look
+    cheap.
+
+    Three layers of falloff rather than one: a real corona has a hot inner rim, a wide mid-field,
+    and a long tail. A single radial gradient reads as a blurry circle; three reads as light.
+  -->
+  <defs>
+    <radialGradient id="corona" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0.42" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="0.52" stop-color="#C4B5FD" stop-opacity="0.95"/>
+      <stop offset="0.63" stop-color="#8B5CF6" stop-opacity="0.75"/>
+      <stop offset="0.78" stop-color="#38BDF8" stop-opacity="0.38"/>
+      <stop offset="1"    stop-color="#38BDF8" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="tile" x1="0" y1="0" x2="0.6" y2="1">
+      <stop offset="0"   stop-color="#2A2F3C"/>
+      <stop offset="0.55" stop-color="#161A22"/>
+      <stop offset="1"   stop-color="#0B0D12"/>
+    </linearGradient>
+
+    <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"    stop-color="#FFFFFF" stop-opacity="0.85"/>
+      <stop offset="0.45" stop-color="#FFFFFF" stop-opacity="0.18"/>
+      <stop offset="1"    stop-color="#FFFFFF" stop-opacity="0.06"/>
+    </linearGradient>
+
+    <radialGradient id="ground" cx="0.5" cy="0.42" r="0.75">
+      <stop offset="0" stop-color="#12151D"/>
+      <stop offset="1" stop-color="#05060A"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="512" height="512" rx="112" fill="url(#ground)"/>
+
+  <!-- The aura. Sized so the corona clears the tile by a wide margin; a tight glow reads as a
+       drop shadow, and a drop shadow is not an aura. -->
+  <circle cx="256" cy="248" r="252" fill="url(#corona)"/>
+
+  <!-- The dark core: a widget tile, so the category is still legible in the mark. -->
+  <rect x="146" y="138" width="220" height="220" rx="58" fill="url(#tile)"/>
+  <rect x="146" y="138" width="220" height="220" rx="58" fill="none"
+        stroke="url(#rim)" stroke-width="3"/>
+
+  <!-- One lit element inside the tile, echoing the corona's colour so the glow reads as coming
+       from the widget rather than sitting behind it. -->
+  <rect x="184" y="284" width="144" height="26" rx="13" fill="#8B5CF6" opacity="0.92"/>
+  <rect x="184" y="184" width="82" height="82" rx="24" fill="#FFFFFF" opacity="0.10"/>
+</svg>

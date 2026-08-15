@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Only the colours the platform needs before Compose starts. Everything else lives in Theme.kt. -->
+    <color name="prism_ink">#0B0D12</color>
+    <color name="prism_icon_background">#05060A</color>
+</resources>

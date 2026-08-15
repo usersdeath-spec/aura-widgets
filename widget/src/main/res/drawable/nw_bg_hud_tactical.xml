@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generated from the HUD Tactical family's WidgetStyle. Do not edit; run tools/generate_native_widgets.py. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="#E6050A07" />
+    <corners android:radius="2dp" />
+    <stroke android:width="1dp" android:color="#8A5BFF9E" />
+</shape>

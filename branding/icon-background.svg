@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108" width="108" height="108" role="img" aria-label="Prism adaptive icon background">
+  <!--
+    Background layer. A near-flat vertical gradient rather than a flat fill: adaptive icons are
+    parallax-shifted by some launchers, and a flat colour makes that motion invisible while a subtle
+    gradient makes it read as depth. Deliberately dark, so the white beam and the prism carry.
+  -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.25" y2="1">
+      <stop offset="0" stop-color="#1A2030"/>
+      <stop offset="1" stop-color="#0B0D12"/>
+    </linearGradient>
+  </defs>
+  <rect width="108" height="108" fill="url(#bg)"/>
+</svg>

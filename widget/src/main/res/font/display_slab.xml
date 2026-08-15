@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Bungee — Heavy slab display.
+
+  Downloadable font, not a bundled file. Costs 0 bytes of APK, is licensed for redistribution by
+  Google, and is cached system-wide after the first fetch so a second app using it pays nothing.
+  If the provider is unavailable the system falls back to the platform face and the widget still
+  renders — which is why this is safe to use in a widget.
+-->
+<font-family xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:fontProviderAuthority="com.google.android.gms.fonts"
+    app:fontProviderPackage="com.google.android.gms"
+    app:fontProviderQuery="Bungee"
+    app:fontProviderCerts="@array/com_google_android_gms_fonts_certs" />

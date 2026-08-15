@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generated from the Bauhaus Primary family's WidgetStyle. Do not edit; run tools/generate_native_widgets.py. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="#FFEFEAE0" />
+    <corners android:radius="2dp" />
+</shape>

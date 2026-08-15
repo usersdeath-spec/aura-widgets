@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+      Applied to the widget's root FrameLayout. Widgets are a single ImageView, so this only needs
+      to guarantee a transparent background — an inherited opaque one would put a rectangle behind
+      every transparent family.
+    -->
+    <style name="Theme.Prism.Widget" parent="">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+</resources>

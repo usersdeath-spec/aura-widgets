@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Brutalist Slab — Date. Generated; do not edit.
+  Run tools/generate_native_widgets.py to regenerate.
+
+  Real Views, not a rasterised bitmap: text is hinted and subpixel-rendered by the platform, the
+  system draws the preview in the widget picker, and a TextClock ticks itself with no worker, no
+  alarm and no battery cost.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/nw_bg_brutalist_slab"
+    android:padding="12dp">
+
+    <TextClock
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:format12Hour="EEE"
+        android:format24Hour="EEE"
+        android:textColor="#8CEDE9DF"
+        android:textSize="13sp"
+        android:letterSpacing="0.12"
+        android:includeFontPadding="false"
+        android:fontFamily="@font/condensed" />
+
+    <TextClock
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:format12Hour="d"
+        android:format24Hour="d"
+        android:textColor="#FFEDE9DF"
+        android:textSize="48sp"
+        android:includeFontPadding="false"
+        android:fontFamily="@font/display_stencil"
+        android:textStyle="bold" />
+
+    <TextClock
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:format12Hour="MMMM"
+        android:format24Hour="MMMM"
+        android:textColor="#8CEDE9DF"
+        android:textSize="13sp"
+        android:includeFontPadding="false"
+        android:fontFamily="@font/condensed" />
+</LinearLayout>

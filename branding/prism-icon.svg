@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Prism app icon">
+  <!--
+    Prism app icon.
+
+    The mark is the product's thesis in one glyph: a single white beam enters a triangular prism and
+    leaves as three separated colours. That is literally what the app does — one home screen goes in,
+    a spectrum of designs comes out.
+
+    Built to survive the icon grid: the beam sits on the horizontal centre line, the prism apex is
+    inset 96px from the top so adaptive-icon masks never clip it, and the whole mark reads at 48px
+    because it is three shapes, not an illustration.
+  -->
+  <defs>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#171C27"/>
+      <stop offset="1" stop-color="#0B0D12"/>
+    </linearGradient>
+    <linearGradient id="glassFace" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.34"/>
+      <stop offset="0.55" stop-color="#FFFFFF" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.02"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.15"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="512" height="512" fill="url(#ground)"/>
+
+  <!-- Incoming beam: one line, flat white, deliberately thin so the split reads as an event. -->
+  <rect x="40" y="252" width="150" height="8" rx="4" fill="#FFFFFF" opacity="0.92"/>
+
+  <!-- Refracted beams. Fanned 9 degrees apart from a shared origin at the prism's exit face. -->
+  <g stroke-linecap="round" stroke-width="9" fill="none">
+    <path d="M322 256 L474 190" stroke="#7C5CFF"/>
+    <path d="M322 256 L474 256" stroke="#3FD8E0"/>
+    <path d="M322 256 L474 322" stroke="#FFB35C"/>
+  </g>
+
+  <!-- The prism itself: equilateral, apex up, with a lit leading edge. -->
+  <path d="M256 96 L392 352 L120 352 Z" fill="url(#glassFace)"/>
+  <path d="M256 96 L392 352 L120 352 Z" fill="none" stroke="url(#edge)" stroke-width="7" stroke-linejoin="round"/>
+</svg>

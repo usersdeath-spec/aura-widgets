@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108" width="108" height="108" role="img" aria-label="Aura Widgets themed icon">
+  <!--
+    Themed icon, Android 13+. The system paints this a single colour from the user's palette, so the
+    violet circle has to survive becoming the same colour as the tiles. It does, because the three
+    shapes differ in form, not just hue — which is the test a themed icon has to pass.
+  -->
+  <rect x="20" y="24" width="39" height="39" rx="10" fill="#000000"/>
+  <circle cx="78" cy="43" r="13" fill="#000000"/>
+  <rect x="20" y="70" width="68" height="15" rx="7.5" fill="#000000"/>
+</svg>

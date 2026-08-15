@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generated from the Mirage family's WidgetStyle. Do not edit; run tools/generate_native_widgets.py. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <gradient
+        android:type="linear"
+        android:angle="270"
+        android:startColor="#FFE8DCC4"
+        android:centerColor="#FFD9C29E"
+        android:endColor="#FFC2A886" />
+    <corners android:radius="18dp" />
+    <stroke android:width="1dp" android:color="#40FFFFFF" />
+</shape>

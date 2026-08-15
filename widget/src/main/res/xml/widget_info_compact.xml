@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  No android:configure. Dropping a widget should place it, not open a settings screen: the user
+  already chose the design when they picked it from the list. Restyling is still available through
+  the launcher's own reconfigure action, which is where Android puts it and where people look.
+-->
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="90dp"
+    android:minHeight="90dp"
+    android:targetCellWidth="2"
+    android:targetCellHeight="2"
+    android:resizeMode="horizontal|vertical"
+    android:widgetCategory="home_screen|keyguard"
+    android:initialLayout="@layout/widget_canvas"
+    android:description="@string/widget_description_compact"
+    android:previewLayout="@layout/widget_canvas"
+    android:updatePeriodMillis="0" />

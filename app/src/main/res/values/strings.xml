@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Aura Widgets</string>
+
+    <!-- Widget picker copy lives in :widget, which owns the provider XML that references it. -->
+
+    <string name="purchase_headline">Buy once. Everything, forever.</string>
+    <string name="purchase_body">One payment unlocks every design family, every wallpaper, every customisation, and every future update. No subscription, no ads, nothing locked.</string>
+
+    <!-- Empty states are invitations, not apologies. -->
+    <string name="favourites_empty">Tap the heart on any design to keep it here.</string>
+    <string name="recents_empty">Designs you place will show up here.</string>
+    <string name="search_no_results">No designs match that. Try a family name, a widget type, or a mood.</string>
+
+    <!-- Failure states say what happened and what fixes it. -->
+    <string name="weather_needs_location">Weather needs location access to show your area.</string>
+    <string name="calendar_needs_permission">Agenda needs calendar access to show your events.</string>
+</resources>

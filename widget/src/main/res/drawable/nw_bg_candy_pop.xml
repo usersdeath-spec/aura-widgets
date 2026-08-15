@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generated from the Candy Pop family's WidgetStyle. Do not edit; run tools/generate_native_widgets.py. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="#FFE83C86" />
+    <corners android:radius="28dp" />
+</shape>

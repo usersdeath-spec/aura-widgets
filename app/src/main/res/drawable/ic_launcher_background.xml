@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The aura itself. Dark ground, luminous corona.
+
+  Dark rather than white: Glass Widgets is #4 top paid on a black icon, so dark demonstrably works,
+  and a glow physically cannot read on white. Three falloff stops rather than one, because a real
+  corona has a hot inner rim, a wide mid-field and a long tail — a single stop reads as a blurry
+  circle instead of light.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <path android:pathData="M0,0 h108 v108 h-108 z">
+        <aapt:attr name="android:fillColor">
+            <gradient android:type="radial" android:centerX="54" android:centerY="45" android:gradientRadius="81">
+                <item android:offset="0.0" android:color="#FF12151D" />
+                <item android:offset="1.0" android:color="#FF05060A" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <path android:pathData="M0,0 h108 v108 h-108 z">
+        <aapt:attr name="android:fillColor">
+            <gradient android:type="radial" android:centerX="54" android:centerY="52" android:gradientRadius="53">
+                <item android:offset="0.40" android:color="#00C4B5FD" />
+                <item android:offset="0.52" android:color="#F2C4B5FD" />
+                <item android:offset="0.63" android:color="#BF8B5CF6" />
+                <item android:offset="0.78" android:color="#6138BDF8" />
+                <item android:offset="1.00" android:color="#0038BDF8" />
+            </gradient>
+        </aapt:attr>
+    </path>
+</vector>

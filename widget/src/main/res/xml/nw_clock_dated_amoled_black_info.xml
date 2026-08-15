@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  previewLayout is the whole point: the system widget picker renders the real widget, so every one
+  of these is browsable and previewable outside our app. Generated; do not edit.
+-->
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="180dp"
+    android:minHeight="90dp"
+    android:targetCellWidth="4"
+    android:targetCellHeight="2"
+    android:resizeMode="horizontal|vertical"
+    android:widgetCategory="home_screen|keyguard"
+    android:initialLayout="@layout/nw_clock_dated_amoled_black"
+    android:previewLayout="@layout/nw_clock_dated_amoled_black"
+    android:description="@string/widget_description_medium"
+    android:updatePeriodMillis="0" />

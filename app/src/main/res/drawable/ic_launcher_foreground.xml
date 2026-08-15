@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The dark widget tile that the corona shines from behind. Inside the 66dp safe zone.
+  The lit pill echoes the corona's violet so the glow reads as emitted by the widget, not as a
+  gradient parked behind it.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <path android:pathData="M44,29 L64,29 A13,13 0 0 1 77,42 L77,62 A13,13 0 0 1 64,75 L44,75 A13,13 0 0 1 31,62 L31,42 A13,13 0 0 1 44,29 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient android:type="linear" android:startX="31" android:startY="29" android:endX="77" android:endY="75">
+                <item android:offset="0.0" android:color="#FF2A2F3C" />
+                <item android:offset="1.0" android:color="#FF0B0D12" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <path
+        android:pathData="M44,29 L64,29 A13,13 0 0 1 77,42 L77,62 A13,13 0 0 1 64,75 L44,75 A13,13 0 0 1 31,62 L31,42 A13,13 0 0 1 44,29 Z"
+        android:strokeWidth="1.4">
+        <aapt:attr name="android:strokeColor">
+            <gradient android:type="linear" android:startX="31" android:startY="29" android:endX="77" android:endY="75">
+                <item android:offset="0.0" android:color="#CCFFFFFF" />
+                <item android:offset="1.0" android:color="#14FFFFFF" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <path android:fillColor="#FFFFFF" android:fillAlpha="0.10"
+        android:pathData="M44,39 L51,39 A5,5 0 0 1 56,44 L56,51 A5,5 0 0 1 51,56 L44,56 A5,5 0 0 1 39,51 L39,44 A5,5 0 0 1 44,39 Z" />
+    <path android:fillColor="#8B5CF6"
+        android:pathData="M42,60 L66,60 A3,3 0 0 1 69,63 A3,3 0 0 1 66,66 L42,66 A3,3 0 0 1 39,63 A3,3 0 0 1 42,60 Z" />
+</vector>

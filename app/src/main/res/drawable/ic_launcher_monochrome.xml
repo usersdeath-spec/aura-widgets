@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Themed icon. A corona cannot survive being flattened to one colour, so the themed variant is the
+  tile alone with a ring around it: the ring stands in for the aura as pure form. This is the test a
+  themed icon has to pass, and a desaturated glow would fail it.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108"
+    android:tint="#000000">
+
+    <path
+        android:fillColor="#000000"
+        android:pathData="M44,33 L64,33 A11,11 0 0 1 75,44 L75,64 A11,11 0 0 1 64,75 L44,75 A11,11 0 0 1 33,64 L33,44 A11,11 0 0 1 44,33 Z" />
+    <path
+        android:strokeColor="#000000"
+        android:strokeWidth="3"
+        android:pathData="M54,20 A34,34 0 1 1 53.9,20 Z" />
+</vector>
